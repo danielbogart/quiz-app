@@ -278,7 +278,7 @@ a {
 	top: 15%;
 	left: 33%;
 	width: 30%;
-	height: 50%;
+	height: 21	.5em;
 	border-radius: 10px;
 	background-color: white;
 	z-index: 1002;
@@ -321,6 +321,12 @@ a {
 }
 
 #next {
+	margin: .7em;
+	font-size: 20px;
+}
+
+#results {
+	display: none;
 	margin: .7em;
 	font-size: 20px;
 }

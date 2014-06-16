@@ -33,20 +33,20 @@ $(document).ready(function() {
 		}
 	}
 
-	var q1 = new newQuestion("What's Keanu's character name?", "Jim", "Johnny", "Jared", "Quintus", "b", "My name's Johnny Utah!");
-	var q2 = new newQuestion("Who's parachute does Utah end up with after switching a few times?", "Grommet's", "Bodhi's", "Pappas's", "His own", "d", "This one's set for a neckbreaker!");
-	var q3 = new newQuestion("What are the bank robbers called?", "The Dead Presidents", "The Ex-Presidents", "The Presidents", "The Ringaling Brothers", "b", "We've been screwing you for years, a few more seconds won't matter!");
+	var q1 = new newQuestion("What's Keanu's character name?", "Jim", "Johnny", "Jared", "Quintus", "b", "\"My name's Johnny Utah!\"");
+	var q2 = new newQuestion("\'s parachute does Utah end up with after switching a few times?", "Grommet\'s", "Bodhi\'s", "Pappas\'s", "His own", "d", "After they pass around parachutes, switching numerous times, Johnny ends up with his own chute again. \"This one\'s set for a neckbreaker!\"");
+	var q3 = new newQuestion("What are the bank robbers called?", "The Dead Presidents", "The Ex-Presidents", "The Presidents", "The Ringaling Brothers", "b", "They are the Ex-Presidents, and as Bodhi/Reagan says \"We\'ve been screwing you for years, a few more seconds shouldn\'t matter!\"");
 	var q4 = new newQuestion("During the intro scene, what score does Agent Utah receive on his shooting test?", "75%", "90%", "10%", "100%", "d", "100% Utah!");
-	var q5 = new newQuestion("Who punches Johnny in the face while he's surfing at Latigo Beach?", "Warchild", "Bunker", "Bodhi", "Babbit", "b", "Bunker decks him, but Johnny rocks him later on the beach. \"Okay. I get it. This is where you tell me that locals rule, and that Yuppie insects like me shouldn't be surfing the break, right?\"");
+	var q5 = new newQuestion("Who punches Johnny in the face while he\'s surfing at Latigo Beach?", "Warchild", "Bunker", "Bodhi", "Babbit", "b", "Bunker decks him, but Johnny gets him back later on the beach. \"Okay. I get it. This is where you tell me that locals rule, and that Yuppie insects like me shouldn\'t be surfing the break, right?\"");
 	var q6 = new newQuestion("What famed football player does Pappas mistake Johnny for when they meet?", "John Elway", "Johnny Manziel", "Johnny Unitas", "John Madden", "c", "Angelo Pappas is less than thrilled to be \"saddled with some quarterback punk, Johnny Unitas or something\".");
-	var q7 = new newQuestion("Where does Agent Utah find Rosie's body while on the hunt for Bodhi?", "Baja", "Sumatra", "Los Angeles", "Miami", "a", "Rosie turns up dead in Baja");
+	var q7 = new newQuestion("Where does Agent Utah find Rosie\'s body while on the hunt for Bodhi?", "Baja", "Sumatra", "Los Angeles", "Miami", "a", "Rosie turns up dead in Baja.");
 	var q8 = new newQuestion("After being chewed out for not delivering any new leads to their boss, what interesting news does Utah have for Babbit?", "He bought a new surfboard", "He caught his first tube", "He found a sand dollar", "He was nominated for an academy award", "b", "\"I caught my first tube today. Sir.\"");
-	var q9 = new newQuestion("Where does Agent Utah finally track down Bodhi in the final scene?", "Bell's Beach, Australia", "Desert Point, Lombok", "Black's Beach, San Diego", "Uluwatu, Bali", "a", "Bodhi is at Bell's Beach for the 50 year storm, and asks to catch just one wave before Johnny takes him in.")
+	var q9 = new newQuestion("Where does Agent Utah finally track down Bodhi in the final scene?", "Bell\'s Beach, Australia", "Desert Point, Lombok", "Black\'s Beach, San Diego", "Uluwatu, Bali", "a", "Bodhi is at Bell\'s Beach for the 50 year storm, and asks to catch just one wave before Johnny takes him in.")
 
 	$('#a').click(function() {
 		document.getElementById('light').style.display='block';
 		document.getElementById('fade').style.display='block';
-		console.log(correctChoice);
+
 		if (correctChoice == "a") {
 			$('#correct').show();
 			$('#incorrect').hide();
@@ -145,24 +145,18 @@ $(document).ready(function() {
 		else if (qCount == 8) {
 			q9.swapped();
 			qCount++;
-			console.log(qCount);
+			$('#next').hide();
+			$('#results').show();
 		}
-
-		else if (qCount == 9) {
-
-			document.getElementById('light').style.display='block';
-			document.getElementById('fade').style.display='block';
-
-			$('#correct').hide();
-			$('#incorrect').hide();
-
-			$('#finished').show();
-
-			document.getElementById('correctContent').innerHTML = "You scored " +score+ " points!"
-			$('#next').hide;
-			$('#playAgain').show;
-		}		
-
 	});	
 
+	$('#results').click(function(){
+			$('#correct').hide();
+			$('#incorrect').hide();
+			$('#finished').show();
+			document.getElementById('correctContent').innerHTML = "You scored " +score+ " points!";
+			$('#next').hide();
+			$('#results').hide();
+			$('#playAgain').show();
+		});
 })
