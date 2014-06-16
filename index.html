@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Point Break: The Quiz</title>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="stylesheet.css" type="text/css" />
+	<link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Indie+Flower|Coming+Soon|Rock+Salt|Comfortaa' rel='stylesheet' type='text/css'>
+
+	<!-- Javscript -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+	<div class="background">
+		<div id="titlePanel">
+			<div id="quizBoxImg"></div>
+			<div id="quizBox">
+				<div id="innerText">
+					<h2>Point Break: The Quiz</h2>
+					<p>Test your knowledge of this classic 1990's action flick starring Keanu
+					Reeves and Patrick Swayze. If you haven't seen the movie, it's time to seriously reevaluate what you've been doing with your life.
+					</p>
+					<input id="getStarted" type="submit" value="Vaya con Dios" />
+				</div>
+			</div>
+		</div>
+		<div id="questionBox">
+			<div id="questionNum">
+				<div id="questionNumHeading">Question</div>
+					<div id="numPadding"><span id="numby">1</span>/10</div>
+			</div>
+			<div id="question">How many meatball subs does Papas ask Utah to order for him?</div>
+			<div id="score">
+				<div id="scoreHeader">Score</div>
+				<div id="currentScore"><span id="cScore">0</span> Pts.</div>
+			</div>
+			<div id="answer1">
+				<div id="a">A</div>
+				<div id="choice1">Two</div>
+			</div>
+			<div id="answer2">
+				<div id="b">B</div>
+				<div id="choice2">Five</div>
+			</div>
+			<div id="answer3">
+				<div id="c">C</div>
+				<div id="choice3">One</div>
+			</div>
+			<div id="answer4">
+				<div id="d">D</div>
+				<div id="choice4">Three</div>
+			</div>
+			<div id="light" class="white_content">
+				<div id="correct">Correct!</div>
+				<div id="incorrect">Wrong!</div>
+				<div id="finished">Finished!</div>
+				<div id="correctContent">
+				"Utah. Get me two!". Despite the fact that it's 10:30 AM, Angelo Pappas is so hungry he "could eat the ass end out of a dead rhino", and has Utah order him two meatball subs.
+				</div>
+				<hr>
+				<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">
+				<input id="next" type="submit" value="Next" />
+				</a>
+				<input id="playAgain" type="button" value="Next" onClick="window.location.reload()" />
+			</div>
+			<div id="fade" class="black_overlay"></div>		
+		</div>
+	</div>
+</body>
+</html>
