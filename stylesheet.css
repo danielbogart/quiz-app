@@ -68,6 +68,7 @@ a {
 	border-radius: 20px;
 	text-align: center;
 	padding: 3em;
+	border: 6px solid #00008F;
 }
 
 #questionNum {
@@ -76,7 +77,8 @@ a {
 	background-color: white;
 	height: 7em;
 	width: 6em;
-	border-radius: 5px;
+	border-radius: 8px;
+	border: 2px solid grey;
 }
 
 #questionNumHeading {
@@ -115,7 +117,8 @@ a {
 	background-color: white;
 	height: 7em;
 	width: 6em;
-	border-radius: 5px;
+	border-radius: 8px;
+	border: 2px solid grey;
 
 }
 
@@ -276,7 +279,7 @@ a {
 	display: none;
 	position: absolute;
 	top: 15%;
-	left: 33%;
+	left: 35%;
 	width: 30%;
 	height: 21	.5em;
 	border-radius: 10px;
