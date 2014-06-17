@@ -43,11 +43,11 @@ $(document).ready(function() {
 	var q8 = new newQuestion("After being chewed out for not delivering any new leads to their boss, what interesting news does Utah have for Babbit?", "He bought a new surfboard", "He caught his first tube", "He found a sand dollar", "He's nominated for an Oscar", "b", "\"I caught my first tube today. Sir.\"");
 	var q9 = new newQuestion("Where does Agent Utah finally track down Bodhi in the last scene?", "Bell\'s Beach, Australia", "Desert Point, Lombok", "Black\'s Beach, San Diego", "Uluwatu, Bali", "a", "Bodhi is at Bell\'s Beach for the 50 year storm, and asks to catch just one wave before Johnny takes him in.")
 
-	$('#a').click(function() {
+	$('.userGuess').click(function() {
 		document.getElementById('light').style.display='block';
 		document.getElementById('fade').style.display='block';
 
-		if (correctChoice == "a") {
+		if (correctChoice == $(this).attr("id")) {
 			$('#correct').show();
 			$('#incorrect').hide();
 			score+=10;
@@ -59,54 +59,6 @@ $(document).ready(function() {
 		}
 	});
 	
-	$('#b').click(function() {
-		document.getElementById('light').style.display='block';
-		document.getElementById('fade').style.display='block';
-
-		if (correctChoice == "b") {
-			$('#correct').show();
-			$('#incorrect').hide();
-			score+=10;
-		}
-
-		else {
-			$('#correct').hide();
-			$('#incorrect').show();
-		}
-	});
-
-	$('#c').click(function() {
-		document.getElementById('light').style.display='block';
-		document.getElementById('fade').style.display='block';
-
-		if (correctChoice == "c") {
-			$('#correct').show();
-			$('#incorrect').hide();
-			score+=10;
-		}
-
-		else {
-			$('#correct').hide();
-			$('#incorrect').show();
-		}
-	});
-
-	$('#d').click(function() {
-		document.getElementById('light').style.display='block';
-		document.getElementById('fade').style.display='block';
-
-		if (correctChoice == "d") {
-			$('#correct').show();
-			$('#incorrect').hide();
-			score+=10;
-		}
-
-		else {
-			$('#correct').hide();
-			$('#incorrect').show();
-		}
-	});
-
 	$('#next').click(function(){
 		if (qCount == 0) {
 			q1.swapped();
