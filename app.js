@@ -39,7 +39,7 @@ $(document).ready(function() {
 	var q4 = new newQuestion("During the intro scene, what score does Agent Utah receive on his shooting test?", "75%", "90%", "10%", "100%", "d", "100% Utah!");
 	var q5 = new newQuestion("Who punches Johnny in the face while he\'s surfing at Latigo Beach?", "Warchild", "Bunker", "Bodhi", "Babbit", "b", "Bunker decks him, but Johnny gets his revenge later on the beach. \"Okay. I get it. This is where you tell me that locals rule, and that Yuppie insects like me shouldn\'t be surfing the break, right?\"");
 	var q6 = new newQuestion("What famed football player does Pappas mistake Johnny for when they meet?", "John Elway", "Johnny Manziel", "Johnny Unitas", "John Madden", "c", "Angelo Pappas is less than thrilled to be \"saddled with some quarterback punk, Johnny Unitas or something\".");
-	var q7 = new newQuestion("Where does Agent Utah find Rosie\'s body while on the hunt for Bodhi?", "Baja", "Sumatra", "Los Angeles", "Miami", "a", "Rosie turns up dead in Baja.");
+	var q7 = new newQuestion("After Agent Utah first meets his new boss, he is told they have a shortage of what?", "Assholes", "Doughnuts", "Bank robbery agents", "Good data", "a", "\"What I don\'t know is how you got assigned here. Guess we must just have ourselves an asshole shortage, huh?\" Utah: \"Not so far\"");
 	var q8 = new newQuestion("After being chewed out for not delivering any new leads to their boss, what interesting news does Utah have for Babbit?", "He bought a new surfboard", "He caught his first tube", "He found a sand dollar", "He's nominated for an Oscar", "b", "\"I caught my first tube today. Sir.\"");
 	var q9 = new newQuestion("Where does Agent Utah finally track down Bodhi in the final scene?", "Bell\'s Beach, Australia", "Desert Point, Lombok", "Black\'s Beach, San Diego", "Uluwatu, Bali", "a", "Bodhi is at Bell\'s Beach for the 50 year storm, and asks to catch just one wave before Johnny takes him in.")
 
@@ -154,7 +154,23 @@ $(document).ready(function() {
 			$('#correct').hide();
 			$('#incorrect').hide();
 			$('#finished').show();
-			document.getElementById('correctContent').innerHTML = "You scored " +score+ " points!";
+			
+			if (score == 100) {
+				document.getElementById('correctContent').innerHTML = "You scored " +score+ " points. 100% Utah!";
+			}
+
+			else if (score >= 70 && score < 100){
+				document.getElementById('correctContent').innerHTML = "You scored " +score+ " points. Not bad!";
+			}
+
+			else if (score >= 50 && score < 70){
+				document.getElementById('correctContent').innerHTML = "You scored " +score+ " points. Needs work, but you're not a total failure!";
+			}
+
+			else {
+				document.getElementById('correctContent').innerHTML = "You scored " +score+ " points. Total wipeout!";
+			}
+
 			$('#next').hide();
 			$('#results').hide();
 			$('#playAgain').show();
